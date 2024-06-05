@@ -6,7 +6,7 @@ Swiper.use([Pagination]);
 function SliderInit() {
   const sliderElement = document.querySelector('.js-blockchain-slider-init');
   
-  if (!sliderElement) {
+  if (!sliderElement || window.innerWidth >= 768) {
     return;
   }
 
