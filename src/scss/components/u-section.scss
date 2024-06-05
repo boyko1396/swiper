@@ -1,0 +1,101 @@
+.u-section {
+  padding: 100rem 0;
+  color: $white80Color;
+  @media (max-width: $sm) {
+    padding: 38rem 0;
+  }
+  &--benefits {
+  }
+  &--roadmap {
+  }
+  &--blockchain {
+    .blockchain-list__row {
+      @media (max-width: $sm) {
+        width: auto;
+        margin: 0;
+        flex-wrap: initial;
+        align-items: flex-start;
+      }
+    }
+    .blockchain-list__col {
+      @media (max-width: $sm) {
+        padding-right: 0;
+        padding-left: 0;
+      }
+    }
+    .swiper-pagination {
+      @media (max-width: $sm) {
+        margin: 20rem 0 -10rem;
+      }
+    }
+  }
+  &--appeal {
+    .blockchain-list__col {
+      &:nth-child(odd) {
+        .blockchain-card__media {
+          @media (max-width: $sm) {
+            margin-right: 15rem;
+          }
+        }
+      }
+      &:nth-child(even) {
+        .blockchain-card__media {
+          @media (max-width: $sm) {
+            margin-left: 11rem;
+          }
+        }
+      }
+    }
+    .blockchain-card__inner {
+      @media (max-width: $sm) {
+        padding: 16rem;
+        flex-direction: row-reverse;
+        align-items: flex-start;
+      }
+    }
+    .blockchain-card__media {
+      @media (max-width: $sm) {
+        max-width: 80rem;
+        display: block;
+        flex: 0 0 80rem;
+      }
+      img {
+        @media (max-width: $sm) {
+          max-height: 90rem;
+          object-fit: contain;
+          object-position: center top;
+        }
+      }
+    }
+    .blockchain-card__content {
+      @media (max-width: $sm) {
+        flex: auto;
+        flex-grow: 1;
+      }
+    }
+    .blockchain-card__title {
+      @media (max-width: $sm) {
+        margin-bottom: 8rem;
+        font-size: var(--fs-4);
+      }
+    }
+    .blockchain-card__text {
+      font-size: var(--fs-5);
+    }
+  }
+  &--cta {
+    padding-bottom: 200rem;
+    @media (max-width: $sm) {
+      padding-bottom: 60rem;
+    }
+  }
+  &__container {
+  }
+  &__title {
+    max-width: 1000rem;
+    margin: 0 0 40rem;
+    @media (max-width: $sm) {
+      margin-bottom: 16rem;
+    }
+  }
+}

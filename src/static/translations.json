@@ -1,0 +1,26 @@
+{
+  "ru": {
+    "navItem1": "В чем фишка?",
+    "navItem2": "Начни зарабатывать",
+    "navItem3": "Блокчейн",
+    "navItem4": "Преимущества",
+    "navItem5": "Q/A",
+    "navItem6": "Задай свой вопрос",
+    "introTitle": "Swiper",
+    "introDescription": "Крипто-медийная социальная сеть",
+    "introHeroAlt": "Swiper — крипто-медийная социальная сеть",
+    "benefitsTitle": "Получай криптовалюту от&nbsp;подписчиков за&nbsp;доступ к&nbsp;твоему контенту"
+  },
+  "en": {
+    "navItem1": "What's the trick?",
+    "navItem2": "Start earning",
+    "navItem3": "Blockchain",
+    "navItem4": "Benefits",
+    "navItem5": "Q/A",
+    "navItem6": "Ask your question",
+    "introTitle": "Swiper",
+    "introDescription": "Crypto-media social network",
+    "introHeroAlt": "Crypto-media social network",
+    "benefitsTitle": "Get cryptocurrency from subscribers for accessing your content"
+  }
+}
