@@ -4,6 +4,7 @@
     'title': 'Swiper'
   })
   <body>
+  <div class="u-preloader"></div>
 
     <div id="root" class="site">
       <div class="site__inner">
@@ -14,7 +15,7 @@
         <!-- header END -->
         <main role="main" class="site__main">
           <!-- intro BEGIN -->
-          <section class="intro">
+          <section id="intro" class="intro">
             <div class="container intro__container">
               <div class="row intro__row">
                 <div class="row__col--5 intro__col intro__col--content">
@@ -24,14 +25,14 @@
                     <div class="store-links intro__store-links">
                       <ul class="store-links__list">
                         <li class="store-links__item">
-                          <a href="#" class="store-links__link" target="_blank">
+                          <a href="#" class="store-links__link" target="_blank" rel="noopener">
                             <picture>
                               <img src="images/app-store.svg" alt="Download on the App Store">
                             </picture>
                           </a>
                         </li>
                         <li class="store-links__item">
-                          <a href="#" class="store-links__link" target="_blank">
+                          <a href="#" class="store-links__link" target="_blank" rel="noopener">
                             <picture>
                               <img src="images/google-play.svg" alt="Get in on Google Play">
                             </picture>
@@ -46,15 +47,28 @@
                     <picture class="intro__hero-bg">
                       <source
                         media="(max-width: 767px)"
+                        srcset="images/intro-hero-bg-sm@2x.webp 2x,
+                                images/intro-hero-bg-sm.webp"
+                                type="image/webp">
+                      <source
+                        media="(max-width: 767px)"
                         srcset="images/intro-hero-bg-sm@2x.png 2x,
                                 images/intro-hero-bg-sm.png"
                                 type="image/png">
+                      <source
+                        srcset="images/intro-hero-bg@2x.webp 2x,
+                                images/intro-hero-bg.webp"
+                                type="image/webp">
                       <img
                         src="images/intro-hero-bg.png"
                         srcset="images/intro-hero-bg@2x.png 2x"
                         width="1036" height="1053">
                     </picture>
                     <picture class="intro__hero">
+                      <source
+                        srcset="images/intro-hero@2x.webp 2x,
+                                images/intro-hero.webp"
+                                type="image/webp">
                       <img
                         src="images/intro-hero.png"
                         srcset="images/intro-hero@2x.png 2x"
@@ -67,58 +81,59 @@
                 </div>
               </div>
               <div class="intro__scroll-down">
-                <button type="button" class="js-scroll-down scroll-down">
+                <a href="#benefits" class="js-anchor scroll-down">
                   <span class="scroll-down__inner">
                     <svg class="u-icon scroll-down__icon">
                       <use xlink:href="images/icons/icons.svg#scroll-down"></use>
                     </svg>
                   </span>
-                </button>
+                </a>
               </div>
             </div>
           </section>
           <!-- intro END -->
           <!-- u-section--benefits BEGIN -->
           <section id="benefits" class="u-section u-section--benefits">
+            <div class="glare glare--1"></div>
             <div class="container u-section__container">
-              <h2 class="u-section__title" data-translate="benefitsTitle">Получай криптовалюту от&nbsp;подписчиков за&nbsp;доступ к&nbsp;твоему контенту</h2>
+              <h2 class="wow fadeIn u-section__title" data-translate="benefitsTitle" data-wow-delay=".2s">Получай криптовалюту от&nbsp;подписчиков за&nbsp;доступ к&nbsp;твоему контенту</h2>
               <div class="benefits-list">
                 <div class="row benefits-list__row">
-                  <div class="row__col--4 benefits-list__col">
+                  <div class="wow fadeIn row__col--4 benefits-list__col" data-wow-delay=".5s">
                     <article class="u-box u-box--theme-dark u-box--hover-bg-accent benefits-card benefits-list__card">
-                      <h3 class="benefits-card__title">Эксклюзивный контент</h3>
-                      <div class="content benefits-card__text">
+                      <h3 class="benefits-card__title" data-translate="benefitsCard1Title">Эксклюзивный контент</h3>
+                      <div class="content benefits-card__text" data-translate="benefitsCard1Text">
                         <p>Смотри только то, что интересно именно&nbsp;тебе!</p>
                       </div>
                       <div class="benefits-card__media">
                         <picture class="benefits-card__picture">
-                          <img src="images/benefits-card-1.svg" alt="Эксклюзивный контент">
+                          <img src="images/benefits-card-1.svg" alt="Эксклюзивный контент" data-translate-alt="benefitsCard1Alt">
                         </picture>
                       </div>
                     </article>
                   </div>
-                  <div class="row__col--4 benefits-list__col">
+                  <div class="wow fadeIn row__col--4 benefits-list__col" data-wow-delay=".65s">
                     <article class="u-box u-box--theme-dark u-box--hover-bg-accent benefits-card benefits-list__card">
-                      <h3 class="benefits-card__title">Монетизация контента</h3>
-                      <div class="content benefits-card__text">
+                      <h3 class="benefits-card__title" data-translate="benefitsCard2Title">Монетизация контента</h3>
+                      <div class="content benefits-card__text" data-translate="benefitsCard2Text">
                         <p>Создавай уникальный контент с приватным доступом по подписке</p>
                       </div>
                       <div class="benefits-card__media">
                         <picture class="benefits-card__picture">
-                          <img src="images/benefits-card-2.svg" alt="Монетизация контента">
+                          <img src="images/benefits-card-2.svg" alt="Монетизация контента" data-translate-alt="benefitsCard2Alt">
                         </picture>
                       </div>
                     </article>
                   </div>
-                  <div class="row__col--4 benefits-list__col">
+                  <div class="wow fadeIn row__col--4 benefits-list__col" data-wow-delay=".8s">
                     <article class="u-box u-box--theme-dark u-box--hover-bg-accent benefits-card benefits-list__card">
-                      <h3 class="benefits-card__title">Безопасность личных данных</h3>
-                      <div class="content benefits-card__text">
+                      <h3 class="benefits-card__title" data-translate="benefitsCard3Title">Безопасность личных&nbsp;данных</h3>
+                      <div class="content benefits-card__text" data-translate="benefitsCard3Text">
                         <p>Все ключи доступа хранятся на сервере и&nbsp;никуда не передаются. Будь уверен - твоя информация защищена от любых угроз!</p>
                       </div>
                       <div class="benefits-card__media">
                         <picture class="benefits-card__picture">
-                          <img src="images/benefits-card-3.svg" alt="Безопасность личных данных">
+                          <img src="images/benefits-card-3.svg" alt="Безопасность личных данных" data-translate-alt="benefitsCard3Alt">
                         </picture>
                       </div>
                     </article>
@@ -130,63 +145,67 @@
           <!-- u-section END -->
           <!-- u-section--roadmap BEGIN -->
           <section id="roadmap" class="u-section u-section--roadmap">
+            <div class="glare glare--2"></div>
             <div class="container u-section__container">
-              <h2 class="u-section__title">Начни зарабатывать</h2>
-              <div class="u-box u-box--theme-dark roadmap">
-                <div class="roadmap__inner">
-                <picture class="roadmap__picture">
-                  <source srcset="images/roadmap-bg-mobile.svg" media="(max-width: 767px)">
-                  <img src="images/roadmap-bg-desktop.svg" alt="Начни зарабатывать">
-                </picture>
-                  <div class="roadmap__list">
-                    <article class="roadmap__list-card">
-                      <div class="roadmap__list-card-content">
-                        <h3 class="roadmap__list-card-title">Создай аккаунт</h3>
-                        <div class="content roadmap__list-card-text">
-                          <p>Нужна только почта, криптокошелек создается автоматически</p>
+              <h2 class="wow fadeIn u-section__title" data-wow-delay=".2s" data-translate="roadmapTitle">Начни зарабатывать</h2>
+              <div class="wow fadeIn" data-wow-delay=".5s">
+                <div class="u-box u-box--theme-dark roadmap">
+                  <div class="glare-blur glare-blur--1"></div>
+                  <div class="roadmap__inner">
+                    <picture class="roadmap__picture">
+                      <source srcset="images/roadmap-bg-mobile.svg" media="(max-width: 767px)">
+                      <img src="images/roadmap-bg-desktop.svg">
+                    </picture>
+                    <div class="roadmap__list">
+                      <article class="roadmap__list-card">
+                        <div class="roadmap__list-card-content">
+                          <h3 class="roadmap__list-card-title" data-translate="roadmapCard1Title">Создай аккаунт</h3>
+                          <div class="content roadmap__list-card-text">
+                            <p data-translate="roadmapCard1Text">Нужна только почта, криптокошелек создается автоматически</p>
+                          </div>
                         </div>
-                      </div>
-                      <div class="roadmap__list-card-dot"></div>
-                      <picture class="roadmap__list-card-picture">
-                        <img src="images/roadmap-icon-1.svg" alt="Создай аккаунт">
-                      </picture>
-                    </article>
-                    <article class="roadmap__list-card">
-                      <div class="roadmap__list-card-content">
-                        <h3 class="roadmap__list-card-title">Заполни профиль</h3>
-                        <div class="content roadmap__list-card-text">
-                          <p>Добавь информацию о себе и&nbsp;установи&nbsp;стоимость подписки</p>
+                        <div class="roadmap__list-card-dot"></div>
+                        <picture class="roadmap__list-card-picture">
+                          <img src="images/roadmap-icon-1.svg" alt="Создай аккаунт" data-translate-alt="roadmapCard1Alt">
+                        </picture>
+                      </article>
+                      <article class="roadmap__list-card">
+                        <div class="roadmap__list-card-content">
+                          <h3 class="roadmap__list-card-title" data-translate="roadmapCard2Title">Заполни профиль</h3>
+                          <div class="content roadmap__list-card-text" data-translate="roadmapCard2Text">
+                            <p>Добавь информацию о себе и&nbsp;установи&nbsp;стоимость подписки</p>
+                          </div>
                         </div>
-                      </div>
-                      <div class="roadmap__list-card-dot"></div>
-                      <picture class="roadmap__list-card-picture">
-                        <img src="images/roadmap-icon-2.svg" alt="Заполни профиль">
-                      </picture>
-                    </article>
-                    <article class="roadmap__list-card">
-                      <div class="roadmap__list-card-content">
-                        <h3 class="roadmap__list-card-title">Опубликуй контент</h3>
-                        <div class="content roadmap__list-card-text">
-                          <p>Поделись с миром своим первым уникальным постом</p>
+                        <div class="roadmap__list-card-dot"></div>
+                        <picture class="roadmap__list-card-picture">
+                          <img src="images/roadmap-icon-2.svg" alt="Заполни профиль" data-translate-alt="roadmapCard2Alt">
+                        </picture>
+                      </article>
+                      <article class="roadmap__list-card">
+                        <div class="roadmap__list-card-content">
+                          <h3 class="roadmap__list-card-title" data-translate="roadmapCard3Title">Опубликуй контент</h3>
+                          <div class="content roadmap__list-card-text" data-translate="roadmapCard3Text">
+                            <p>Поделись с миром своим первым уникальным постом</p>
+                          </div>
                         </div>
-                      </div>
-                      <div class="roadmap__list-card-dot"></div>
-                      <picture class="roadmap__list-card-picture">
-                        <img src="images/roadmap-icon-3.svg" alt="Опубликуй контент">
-                      </picture>
-                    </article>
-                    <article class="roadmap__list-card">
-                      <div class="roadmap__list-card-content">
-                        <h3 class="roadmap__list-card-title">Зарабатывай</h3>
-                        <div class="content roadmap__list-card-text">
-                          <p>Задавай новые тренды в Swiper и&nbsp;увеличивай охваты. Заработанная криптовалюта поступит на твой кошелек</p>
+                        <div class="roadmap__list-card-dot"></div>
+                        <picture class="roadmap__list-card-picture">
+                          <img src="images/roadmap-icon-3.svg" alt="Опубликуй контент" data-translate-alt="roadmapCard3Alt">
+                        </picture>
+                      </article>
+                      <article class="roadmap__list-card">
+                        <div class="roadmap__list-card-content">
+                          <h3 class="roadmap__list-card-title" data-translate="roadmapCard4Title">Зарабатывай</h3>
+                          <div class="content roadmap__list-card-text">
+                            <p data-translate="roadmapCard4Text">Задавай новые тренды в Swiper и&nbsp;увеличивай охваты. Заработанная криптовалюта поступит на твой кошелек</p>
+                          </div>
                         </div>
-                      </div>
-                      <div class="roadmap__list-card-dot"></div>
-                      <picture class="roadmap__list-card-picture">
-                        <img src="images/roadmap-icon-4.svg" alt="Зарабатывай">
-                      </picture>
-                    </article>
+                        <div class="roadmap__list-card-dot"></div>
+                        <picture class="roadmap__list-card-picture">
+                          <img src="images/roadmap-icon-4.svg" alt="Зарабатывай" data-translate-alt="roadmapCard4Alt">
+                        </picture>
+                      </article>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -196,55 +215,57 @@
           <!-- u-section--blockchain BEGIN -->
           <section id="blockchain" class="u-section u-section--blockchain">
             <div class="container u-section__container">
-              <h2 class="u-section__title">Блокчейн</h2>
+              <h2 class="wow fadeIn u-section__title" data-wow-delay=".2s" data-translate="blockchainTitle">Блокчейн</h2>
               <div class="js-blockchain-slider-init blockchain-list">
+                <div class="glare-blur glare-blur--2"></div>
+                <div class="glare-blur glare-blur--3"></div>
                 <div class="swiper-wrapper row blockchain-list__row">
                   <div class="swiper-slide row__col--12 blockchain-list__col">
-                    <article class="u-box u-box--theme-dark blockchain-card blockchain-card--size-lg blockchain-list__card">
+                    <article class="wow fadeIn u-box u-box--theme-dark blockchain-card blockchain-card--size-lg blockchain-list__card" data-wow-delay=".5s">
                       <div class="blockchain-card__inner">
                         <div class="blockchain-card__content">
-                          <h3 class="blockchain-card__title">Платформа <span>Polygon</span></h3>
+                          <h3 class="blockchain-card__title" data-translate="blockchainCard1Title">Платформа <span>Polygon</span></h3>
                           <div class="content blockchain-card__text">
-                            <p>Мы выбрали Polygon за самые низкие комиссии транзакций и высокую скорость их обработки. Сеть Polygon поддерживает высокую масштабируемость и обеспечивает надежную защиты данных благодаря централизованной инфраструктуре</p>
+                            <p data-translate="blockchainCard1Text">Мы выбрали Polygon за самые низкие комиссии транзакций и высокую скорость их обработки. Сеть Polygon поддерживает высокую масштабируемость и обеспечивает надежную защиты данных благодаря централизованной инфраструктуре</p>
                           </div>
                         </div>
                         <div class="blockchain-card__media">
                           <picture class="blockchain-card__picture">
-                            <img src="images/blockchain-card-1.svg" alt="Платформа Polygon">
+                            <img src="images/blockchain-card-1.svg" alt="Платформа Polygon" data-translate-alt="blockchainCard1Alt">
                           </picture>
                         </div>
                       </div>
                     </article>
                   </div>
                   <div class="swiper-slide row__col--6 blockchain-list__col">
-                    <article class="u-box u-box--theme-dark blockchain-card blockchain-card--size-md blockchain-list__card">
+                    <article class="wow fadeIn u-box u-box--theme-dark blockchain-card blockchain-card--size-md blockchain-list__card" data-wow-delay=".65s">
                       <div class="blockchain-card__inner">
                         <div class="blockchain-card__content">
-                          <h3 class="blockchain-card__title">Простая регистрация /&nbsp;Легкий старт</h3>
+                          <h3 class="blockchain-card__title" data-translate="blockchainCard2Title">Простая регистрация /&nbsp;Легкий старт</h3>
                           <div class="content blockchain-card__text">
-                            <p>Создание аккаунта занимает всего пару минут, а&nbsp;встроенный криптокошелек позволяет мгновенно начать пользоваться всеми возможностями Swiper. Интуитивно понятный интерфейс поможет быстро заполнить профиль и опубликовать первый пост, чтобы сразу начать зарабатывать криптовалюту</p>
+                            <p data-translate="blockchainCard2Text">Создание аккаунта занимает всего пару минут, а&nbsp;встроенный криптокошелек позволяет мгновенно начать пользоваться всеми возможностями Swiper. Интуитивно понятный интерфейс поможет быстро заполнить профиль и опубликовать первый пост, чтобы сразу начать зарабатывать криптовалюту</p>
                           </div>
                         </div>
                         <div class="blockchain-card__media">
                           <picture class="blockchain-card__picture">
-                            <img src="images/blockchain-card-2.svg" alt="Простая регистрация / Легкий старт">
+                            <img src="images/blockchain-card-2.svg" alt="Простая регистрация / Легкий старт" data-translate-alt="blockchainCard2Alt">
                           </picture>
                         </div>
                       </div>
                     </article>
                   </div>
                   <div class="swiper-slide row__col--6 blockchain-list__col">
-                    <article class="u-box u-box--theme-dark blockchain-card blockchain-card--size-md blockchain-list__card">
+                    <article class="wow fadeIn u-box u-box--theme-dark blockchain-card blockchain-card--size-md blockchain-list__card" data-wow-delay=".8s">
                       <div class="blockchain-card__inner">
                         <div class="blockchain-card__content">
-                          <h3 class="blockchain-card__title">Надежное шифрование</h3>
+                          <h3 class="blockchain-card__title" data-translate="blockchainCard3Title">Надежное шифрование</h3>
                           <div class="content blockchain-card__text">
-                            <p>Мы используем передовые методы шифрования, чтобы защитить все твои личные данные, обеспечивая их безопасность и конфиденциальность. Твои данные находятся под надежной защитой от любых внешних угроз</p>
+                            <p data-translate="blockchainCard3Text">Мы используем передовые методы шифрования, чтобы защитить все твои личные данные, обеспечивая их безопасность и конфиденциальность. Твои данные находятся под надежной защитой от любых внешних угроз</p>
                           </div>
                         </div>
                         <div class="blockchain-card__media">
                           <picture class="blockchain-card__picture">
-                            <img src="images/blockchain-card-3.svg" alt="Надежное шифрование">
+                            <img src="images/blockchain-card-3.svg" alt="Надежное шифрование" data-translate-alt="blockchainCard3Alt">
                           </picture>
                         </div>
                       </div>
@@ -259,55 +280,58 @@
           <!-- u-section--appeal BEGIN -->
           <section id="appeal" class="u-section u-section--appeal">
             <div class="container u-section__container">
-              <h2 class="u-section__title">Преимущества</h2>
+              <h2 class="wow fadeIn u-section__title" data-wow-delay=".2s" data-translate="appealTitle">Преимущества</h2>
               <div class="blockchain-list">
                 <div class="row blockchain-list__row">
-                  <div class="row__col--12 blockchain-list__col">
+                  <div class="wow fadeIn row__col--12 blockchain-list__col" data-wow-delay=".5s">
                     <article class="u-box u-box--theme-dark blockchain-card blockchain-card--size-lg blockchain-list__card">
                       <div class="blockchain-card__inner">
                         <div class="blockchain-card__content">
-                          <h3 class="blockchain-card__title">Лояльные условия для инфлюенсеров/блогеров</h3>
-                          <div class="content blockchain-card__text">
+                          <h3 class="blockchain-card__title" data-translate="appealCard1Title">Лояльные условия для инфлюенсеров/блогеров</h3>
+                          <div class="content blockchain-card__text" data-translate="appealCard1Text">
                             <p>Наша команда активно поддерживает и помогает в продвижении блоггеров/инфлюенсеров, помогая, увеличить присутствие в Swiper и предлагая наиболее лояльные условия монетизации своего контента</p>
                           </div>
                         </div>
                         <div class="blockchain-card__media">
+                          <div class="glare-blur glare-blur--4"></div>
                           <picture class="blockchain-card__picture">
-                            <img src="images/blockchain-card-4.svg" alt="Лояльные условия для инфлюенсеров/блогеров">
+                            <img src="images/blockchain-card-4.svg" alt="Лояльные условия для инфлюенсеров/блогеров" data-translate-alt="appealCard1Alt">
                           </picture>
                         </div>
                       </div>
                     </article>
                   </div>
-                  <div class="row__col--12 blockchain-list__col">
+                  <div class="wow fadeIn row__col--12 blockchain-list__col" data-wow-delay=".65s">
                     <article class="u-box u-box--theme-dark blockchain-card blockchain-card--size-lg blockchain-list__card">
                       <div class="blockchain-card__inner">
                         <div class="blockchain-card__content">
-                          <h3 class="blockchain-card__title">Прислушиваемся к каждому пользователю</h3>
-                          <div class="content blockchain-card__text">
+                          <h3 class="blockchain-card__title" data-translate="appealCard2Title">Прислушиваемся к каждому пользователю</h3>
+                          <div class="content blockchain-card__text" data-translate="appealCard2Text">
                             <p>Мы ценим каждого пользователя Swiper и прислушиваемся к его мнению. Ваша обратная связь помогает понять, что можно улучшить в нашей социальной сети. Команда Swiper постоянно работает над улучшением платформы, чтобы сделать ее более удобной, функциональной и привлекательной для наших пользователей</p>
                           </div>
                         </div>
                         <div class="blockchain-card__media">
+                          <div class="glare-blur glare-blur--4"></div>
                           <picture class="blockchain-card__picture">
-                            <img src="images/blockchain-card-5.svg" alt="Прислушиваемся к каждому пользователю">
+                            <img src="images/blockchain-card-5.svg" alt="Прислушиваемся к каждому пользователю" data-translate-alt="appealCard2Alt">
                           </picture>
                         </div>
                       </div>
                     </article>
                   </div>
-                  <div class="row__col--12 blockchain-list__col">
+                  <div class="wow fadeIn row__col--12 blockchain-list__col" data-wow-delay=".8s">
                     <article class="u-box u-box--theme-dark blockchain-card blockchain-card--size-lg blockchain-list__card">
                       <div class="blockchain-card__inner">
                         <div class="blockchain-card__content">
-                          <h3 class="blockchain-card__title">Широкие возможности монетизации</h3>
-                          <div class="content blockchain-card__text">
+                          <h3 class="blockchain-card__title" data-translate="appealCard3Title">Широкие возможности монетизации</h3>
+                          <div class="content blockchain-card__text" data-translate="appealCard3Text">
                             <p>В Swiper ты можешь публиковать, как открытый, так и&nbsp;закрытый контент, монетизируя свой уникальный контент. Эксклюзивные посты или экспертное мнение в&nbsp;любой сфере - только ты решаешь, чем делиться с&nbsp;миром и какую стоимость за это устанавливать</p>
                           </div>
                         </div>
                         <div class="blockchain-card__media">
+                          <div class="glare-blur glare-blur--4"></div>
                           <picture class="blockchain-card__picture">
-                            <img src="images/blockchain-card-6.svg" alt="Широкие возможности монетизации">
+                            <img src="images/blockchain-card-6.svg" alt="Широкие возможности монетизации" data-translate-alt="appealCard3Alt">
                           </picture>
                         </div>
                       </div>
@@ -320,136 +344,140 @@
           <!-- u-section--appeal END -->
           <!-- u-section--faq BEGIN -->
           <section id="faq" class="u-section u-section--faq">
+            <div class="glare glare--3"></div>
+            <div class="glare glare--4"></div>
+            <div class="glare-blur glare-blur--6"></div>
+            <div class="glare-blur glare-blur--7"></div>
             <div class="container u-section__container">
-              <h2 class="u-section__title">Вопрос/Ответ</h2>
-              <div class="faq-list" itemscope itemtype="https://schema.org/FAQPage">
+              <h2 class="wow fadeIn u-section__title" data-wow-delay=".2s" data-translate="faqTitle">Вопрос/Ответ</h2>
+              <div class="wow fadeIn faq-list" itemscope itemtype="https://schema.org/FAQPage" data-wow-delay=".5s">
                 <article class="u-box u-box--theme-dark faq-card faq-list__card" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                   <div class="faq-card__header">
                     <button type="button" class="js-faq-card-toggle faq-card__btn">
-                      <h3 class="faq-card__title" itemprop="name">Регистрация в Swiper</h3>
+                      <h3 class="faq-card__title" itemprop="name" data-translate="faqCard1Title">Регистрация в Swiper</h3>
                     </button>
                     <div class="faq-card__icon"></div>
                   </div>
                   <div class="faq-card__dropdown">
                     <div class="content faq-card__text" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                      <p>Для начала необходимо скачать приложение Swiper в AppStore или GooglePlay и зарегистрироваться. После этого ты получишь доступ к основным функциям и сможешь начать создавать свой контент, общаться с другими пользователями и монетизировать свой блог.</p>
+                      <p data-translate="faqCard1Text">Для начала необходимо скачать приложение Swiper в AppStore или GooglePlay и зарегистрироваться. После этого ты получишь доступ к основным функциям и сможешь начать создавать свой контент, общаться с другими пользователями и монетизировать свой блог.</p>
                     </div>
                   </div>
                 </article>
                 <article class="u-box u-box--theme-dark faq-card faq-list__card" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                   <div class="faq-card__header">
                     <button type="button" class="js-faq-card-toggle faq-card__btn">
-                      <h3 class="faq-card__title" itemprop="name">Создание профиля и настройка аккаунта</h3>
+                      <h3 class="faq-card__title" itemprop="name" data-translate="faqCard2Title">Создание профиля и настройка аккаунта</h3>
                     </button>
                     <div class="faq-card__icon"></div>
                   </div>
                   <div class="faq-card__dropdown">
                     <div class="content faq-card__text" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                      <p>Чтобы выложить публикацию, нажми иконку “камеры” в нижней панели Swiper, далее ты перейдешь в раздел создания публикации, добавь фото или видео (не забудь указать в настройках, кто будет видеть данную публикацию - все пользователи или только платные подписчики).</p>
+                      <p data-translate="faqCard2Text">После успешной регистрации ты можешь заполнить профиль, добавить информацию о себе и указать стоимость ежемесячной подписки на твой приватный контент.</p>
                     </div>
                   </div>
                 </article>
                 <article class="u-box u-box--theme-dark faq-card faq-list__card" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                   <div class="faq-card__header">
                     <button type="button" class="js-faq-card-toggle faq-card__btn">
-                      <h3 class="faq-card__title" itemprop="name">Создание публикации</h3>
+                      <h3 class="faq-card__title" itemprop="name" data-translate="faqCard3Title">Создание публикации</h3>
                     </button>
                     <div class="faq-card__icon"></div>
                   </div>
                   <div class="faq-card__dropdown">
                     <div class="content faq-card__text" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                      <p>Чтобы выложить публикацию, нажми иконку “камеры” в нижней панели Swiper, далее ты перейдешь в раздел создания публикации, добавь фото или видео (не забудь указать в настройках, кто будет видеть данную публикацию - все пользователи или только платные подписчики).</p>
+                      <p data-translate="faqCard3Text">Чтобы выложить публикацию, нажми иконку “камеры” в нижней панели Swiper, далее ты перейдешь в раздел создания публикации, добавь фото или видео (не забудь указать в настройках, кто будет видеть данную публикацию - все пользователи или только платные подписчики)</p>
                     </div>
                   </div>
                 </article>
                 <article class="u-box u-box--theme-dark faq-card faq-list__card" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                   <div class="faq-card__header">
                     <button type="button" class="js-faq-card-toggle faq-card__btn">
-                      <h3 class="faq-card__title" itemprop="name">Монетизация</h3>
+                      <h3 class="faq-card__title" itemprop="name" data-translate="faqCard4Title">Монетизация</h3>
                     </button>
                     <div class="faq-card__icon"></div>
                   </div>
                   <div class="faq-card__dropdown">
                     <div class="content faq-card__text" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                      <p>Ты можешь монетизировать свой контент, устанавливая цену за доступ к своему профилю, предлагая подписку на него.<br>Другие пользователи, в свою очередь будут оплачивать подписку на твои эксклюзивные приватные публикации, а полученные средства в виде криптовалюты будут поступать на твой кошелек.</p>
+                      <p data-translate="faqCard4Text">Ты можешь монетизировать свой контент, устанавливая цену за доступ к своему профилю, предлагая подписку на него.<br>Другие пользователи, в свою очередь будут оплачивать подписку на твои эксклюзивные приватные публикации, а полученные средства в виде криптовалюты будут поступать на твой кошелек.</p>
                     </div>
                   </div>
                 </article>
                 <article class="u-box u-box--theme-dark faq-card faq-list__card" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                   <div class="faq-card__header">
                     <button type="button" class="js-faq-card-toggle faq-card__btn">
-                      <h3 class="faq-card__title" itemprop="name">Виды платного контента</h3>
+                      <h3 class="faq-card__title" itemprop="name" data-translate="faqCard5Title">Виды платного контента</h3>
                     </button>
                     <div class="faq-card__icon"></div>
                   </div>
                   <div class="faq-card__dropdown">
                     <div class="content faq-card__text" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                      <p>В Swiper ты можешь получать настоящие деньги за свой уникальный контент различными способами: создавая платные подписки на свой контент, либо принимая пожертвования (донаты) от других пользователей.<br>Ограничений в виде и тематиках публикуемого контента нет! Это может быть личный блог, образовательный контент, экспертное мнение в любой сфере - только ты вправе решать, что публиковать и что смотреть</p>
+                      <p data-translate="faqCard5Text">В Swiper ты можешь получать настоящие деньги за свой уникальный контент различными способами: создавая платные подписки на свой контент, либо принимая пожертвования (донаты) от других пользователей.<br>Ограничений в виде и тематиках публикуемого контента нет! Это может быть личный блог, образовательный контент, экспертное мнение в любой сфере - только ты вправе решать, что публиковать и что смотреть</p>
                     </div>
                   </div>
                 </article>
                 <article class="u-box u-box--theme-dark faq-card faq-list__card" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                   <div class="faq-card__header">
                     <button type="button" class="js-faq-card-toggle faq-card__btn">
-                      <h3 class="faq-card__title" itemprop="name">Управление стоимостью контента</h3>
+                      <h3 class="faq-card__title" itemprop="name" data-translate="faqCard6Title">Управление стоимостью контента</h3>
                     </button>
                     <div class="faq-card__icon"></div>
                   </div>
                   <div class="faq-card__dropdown">
                     <div class="content faq-card__text" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                      <p>Ты можешь установить в настройках редактирования профиля стоимость ежемесячной подписки на приватные публикации.<br>А перед публикацией необходимо отметить, кто будет видеть данную публикацию - все пользователи или только платные подписчики. В дальнейшем ты можешь корректировать стоимость в настройках профиля.</p>
+                      <p data-translate="faqCard6Text">Ты можешь установить в настройках редактирования профиля стоимость ежемесячной подписки на приватные публикации.<br>А перед публикацией необходимо отметить, кто будет видеть данную публикацию - все пользователи или только платные подписчики. В дальнейшем ты можешь корректировать стоимость в настройках профиля.</p>
                     </div>
                   </div>
                 </article>
                 <article class="u-box u-box--theme-dark faq-card faq-list__card" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                   <div class="faq-card__header">
                     <button type="button" class="js-faq-card-toggle faq-card__btn">
-                      <h3 class="faq-card__title" itemprop="name">Доступ к контенту</h3>
+                      <h3 class="faq-card__title" itemprop="name" data-translate="faqCard7Title">Доступ к контенту</h3>
                     </button>
                     <div class="faq-card__icon"></div>
                   </div>
                   <div class="faq-card__dropdown">
                     <div class="content faq-card__text" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                      <p>Помимо продажи своего контента, ты также можешь приобрести доступ к контенту любого другого пользователя. Для этого необходимо перейти в раздел “кошелек”, при нажатии на кнопку “пополнить” появится QR-код для пополнения твоего личного криптокошелька Swiper.<br>Далее, перейдя в профиль любого пользователя, ты сможешь оформить доступ к платному контенту.</p>
+                      <p data-translate="faqCard7Text">Помимо продажи своего контента, ты также можешь приобрести доступ к контенту любого другого пользователя. Для этого необходимо перейти в раздел “кошелек”, при нажатии на кнопку “пополнить” появится QR-код для пополнения твоего личного криптокошелька Swiper.<br>Далее, перейдя в профиль любого пользователя, ты сможешь оформить доступ к платному контенту.</p>
                     </div>
                   </div>
                 </article>
                 <article class="u-box u-box--theme-dark faq-card faq-list__card" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                   <div class="faq-card__header">
                     <button type="button" class="js-faq-card-toggle faq-card__btn">
-                      <h3 class="faq-card__title" itemprop="name">Пополнение кошелька</h3>
+                      <h3 class="faq-card__title" itemprop="name" data-translate="faqCard8Title">Пополнение кошелька</h3>
                     </button>
                     <div class="faq-card__icon"></div>
                   </div>
                   <div class="faq-card__dropdown">
                     <div class="content faq-card__text" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                      <p>Чтобы пополнить свой криптокошелек необходимо перейти в раздел “кошелек”, при нажатии на кнопку “пополнить” появится QR-код для пополнения твоего личного криптокошелька Swiper.</p>
+                      <p data-translate="faqCard8Text">Чтобы пополнить свой криптокошелек необходимо перейти в раздел “кошелек”, при нажатии на кнопку “пополнить” появится QR-код для пополнения твоего личного криптокошелька Swiper.</p>
                     </div>
                   </div>
                 </article>
                 <article class="u-box u-box--theme-dark faq-card faq-list__card" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                   <div class="faq-card__header">
                     <button type="button" class="js-faq-card-toggle faq-card__btn">
-                      <h3 class="faq-card__title" itemprop="name">Снятие средств</h3>
+                      <h3 class="faq-card__title" itemprop="name" data-translate="faqCard9Title">Снятие средств</h3>
                     </button>
                     <div class="faq-card__icon"></div>
                   </div>
                   <div class="faq-card__dropdown">
                     <div class="content faq-card__text" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                      <p>Чтобы снять криптовалюту со своего криптокошелька необходимо перейти в раздел “кошелек”, при нажатии на кнопку “отправить” появится окно, где необходимо указать адрес кошелька сети Polygon, а также сумму перевода.</p>
+                      <p data-translate="faqCard9Text">Чтобы снять криптовалюту со своего криптокошелька необходимо перейти в раздел “кошелек”, при нажатии на кнопку “отправить” появится окно, где необходимо указать адрес кошелька сети Polygon, а также сумму перевода.</p>
                     </div>
                   </div>
                 </article>
                 <article class="u-box u-box--theme-dark faq-card faq-list__card" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                   <div class="faq-card__header">
                     <button type="button" class="js-faq-card-toggle faq-card__btn">
-                      <h3 class="faq-card__title" itemprop="name">Донаты</h3>
+                      <h3 class="faq-card__title" itemprop="name" data-translate="faqCard10Title">Донаты</h3>
                     </button>
                     <div class="faq-card__icon"></div>
                   </div>
                   <div class="faq-card__dropdown">
                     <div class="content faq-card__text" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                      <p>Ты также можешь принимать и отправлять пожертвования в личных сообщения в Swiper. Для этого необходимо перейти в диалог с любым пользователем, кликнуть на иконку “скрепки”, выбрать “переводы” и в появившимся окне указать желаемую сумму для перевода доната.</p>
+                      <p data-translate="faqCard10Text">Ты также можешь принимать и отправлять пожертвования в личных сообщения в Swiper. Для этого необходимо перейти в диалог с любым пользователем, кликнуть на иконку “скрепки”, выбрать “переводы” и в появившимся окне указать желаемую сумму для перевода доната.</p>
                     </div>
                   </div>
                 </article>
@@ -459,12 +487,15 @@
           <!-- u-section--faq END -->
           <!-- u-section--cta BEGIN -->
           <section id="cta" class="u-section u-section--cta">
-            <div class="container u-section__container">
+            <div class="glare glare--5"></div>
+            <div class="glare glare--6"></div>
+            <div class="wow fadeIn container u-section__container" data-wow-delay=".2s">
               <div class="u-box u-box--theme-dark cta-block">
+                <div class="glare-blur glare-blur--5"></div>
                 <div class="row cta-block__row">
                   <div class="row__col--6 cta-block__col cta-block__col--content">
                     <div class="cta-block__content">
-                      <h2 class="cta-block__title">Остались вопросы?</h2>
+                      <h2 class="cta-block__title" data-translate="ctaTitle">Остались вопросы?</h2>
                       <picture class="cta-block__picture">
                         <img src="images/cta-img.svg" alt="Остались вопросы?">
                       </picture>
@@ -474,42 +505,27 @@
                     <div class="cta-block__appeal">
                       <form id="cta-form" action="static/form.php" method="POST" class="cta-block__form">
                         <div class="u-control cta-block__form-line">
-                          <input type="email" name="cta_email" class="u-input u-input--theme-white-light u-input--size-md u-control__input" required placeholder="Электронная почта">
+                          <input type="email" name="cta_email" class="u-input u-input--theme-white-light u-input--size-md u-control__input" required placeholder="Электронная почта" data-translate-placeholder="ctaInputEmail">
                         </div>
                         <div class="u-control cta-block__form-line">
                           <select name="cta_message" id="js-select-cta-question" class="js-select-cta-question u-input u-input--theme-white-light u-input--size-md u-input--type-select u-control__input">
-                            <option value="Выбор вопроса" selected disabled>Выбор вопроса</option>
-                            <option value="Вопрос №1">Вопрос №1</option>
-                            <option value="Вопрос №2">Вопрос №2</option>
-                            <option value="Вопрос №3">Вопрос №3</option>
-                            <option value="Вопрос №4">Вопрос №4</option>
-                            <option value="Вопрос №5">Вопрос №5</option>
-                            <option value="Вопрос №6">Вопрос №6</option>
-                            <option value="Вопрос №7">Вопрос №7</option>
-                            <option value="Вопрос №8">Вопрос №8</option>
-                            <option value="Вопрос №9">Вопрос №9</option>
-                            <option value="Вопрос №10">Вопрос №10</option>
-                            <option value="Вопрос №11">Вопрос №11</option>
-                            <option value="Вопрос №12">Вопрос №12</option>
-                            <option value="Вопрос №13">Вопрос №13</option>
-                            <option value="Вопрос №14">Вопрос №14</option>
-                            <option value="Вопрос №15">Вопрос №15</option>
-                            <option value="Вопрос №16">Вопрос №16</option>
-                            <option value="Вопрос №17">Вопрос №17</option>
-                            <option value="Вопрос №18">Вопрос №18</option>
-                            <option value="Вопрос №19">Вопрос №19</option>
+                            <option value="Выбор вопроса" selected disabled data-translate-option="ctaSelect1Option1">Выбор вопроса</option>
+                            <option value="Вопрос №1" data-translate-option="ctaSelect1Option2">Вопрос №1</option>
+                            <option value="Вопрос №2" data-translate-option="ctaSelect1Option3">Вопрос №2</option>
+                            <option value="Вопрос №3" data-translate-option="ctaSelect1Option4">Вопрос №3</option>
+                            <option value="Вопрос №4" data-translate-option="ctaSelect1Option5">Вопрос №4</option>
+                            <option value="Вопрос №5" data-translate-option="ctaSelect1Option6">Вопрос №5</option>
                           </select>
                         </div>
                         <div class="u-control cta-block__form-line">
-                          <textarea name="cta_message" class="u-input u-input--theme-white-light u-input--size-md u-input--type-textarea u-control__input" col="" row="" placeholder="Описание"></textarea>
+                          <textarea name="cta_message" class="u-input u-input--theme-white-light u-input--size-md u-input--type-textarea u-control__input" col="" row="" placeholder="Описание" data-translate-placeholder="ctaInputMessage"></textarea>
                         </div>
                         <button type="submit" class="btn btn--theme-accent btn--size-md cta-block__form-btn">
                           <span class="btn__inner">
-                            <span class="btn__title">Отравить</span>
+                            <span class="btn__title" data-translate="ctaBtn">Отправить</span>
                           </span>
                         </button>
                       </form>
-                      <div class="title-size-2 cta-block__thanks">Ваше сообщения отправлено</div>
                     </div>
                   </div>
                 </div>
@@ -523,6 +539,7 @@
           'el': 'site__footer'
         })
         <!-- footer END -->
+        @@include('html/components/cta-thanks.html')
       </div>
     </div>
 

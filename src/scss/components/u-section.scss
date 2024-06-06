@@ -1,10 +1,34 @@
 .u-section {
   padding: 100rem 0;
   color: $white80Color;
+  position: relative;
+  z-index: 0;
   @media (max-width: $sm) {
     padding: 38rem 0;
   }
   &--benefits {
+    .benefits-card__picture {
+      @media (max-width: $sm) {
+        padding: 38rem 0;
+      }
+      &:before {
+        @media (max-width: $sm) {
+          background: $accentColor;
+          width: 250rem;
+          height: 250rem;
+          content: '';
+          filter: blur(80px);
+          border-radius: 50%;
+          opacity: .6;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          pointer-events: none;
+          z-index: -1;
+        }
+      }
+    }
   }
   &--roadmap {
   }
@@ -81,6 +105,15 @@
     }
     .blockchain-card__text {
       font-size: var(--fs-5);
+    }
+    .blockchain-card__media {
+      .glare-blur {
+        @media (max-width: $sm) {
+          width: 100rem !important;
+          height: 100rem !important;
+          filter: blur(32rem);
+        }
+      }
     }
   }
   &--cta {

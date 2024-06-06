@@ -37,18 +37,18 @@
           <div class="language-select header__language-select">
             <ul class="language-select__list">
               <li class="language-select__item">
-                <a href="#" class="language-select__link is-active">
+                <button type="button" class="language-select__link is-active" data-lang="ru">
                   <picture>
                     <img src="images/flags/ru.png" alt="RU">
                   </picture>
-                </a>
+                </button>
               </li>
               <li class="language-select__item">
-                <a href="#" class="language-select__link">
+                <button type="button" class="language-select__link" data-lang="en">
                   <picture>
                     <img src="images/flags/us.png" alt="US">
                   </picture>
-                </a>
+                </button>
               </li>
             </ul>
           </div>
@@ -57,12 +57,14 @@
           <div class="store-links header__developer">
             <ul class="store-links__list">
               <li class="store-links__item">
-                <p class="store-links__title">Разработано при поддержке</p>
-                <a href="#" class="store-links__link" target="_blank">
+                <p class="store-links__title" data-translate="footerDeveloperTitle">Разработано при поддержке</p>
+                <div class="store-links__link" target="_blank">
                   <picture>
-                    <img src="images/logo-developer.svg" alt="Фонд содействия инновациям">
+                    <img src="images/logo-developer.svg">
                   </picture>
-                </a>
+                  <a href="https://univertechpred.ru/" target="_blank" class="store-links__href store-links__href--univer" rel="noopener"></a>
+                  <a href="https://fasie.ru/" target="_blank" class="store-links__href store-links__href--fond" rel="noopener"></a>
+                </div>
               </li>
             </ul>
           </div>
@@ -71,14 +73,14 @@
           <div class="store-links header__store">
             <ul class="store-links__list">
               <li class="store-links__item">
-                <a href="#" class="store-links__link" target="_blank">
+                <a href="#" class="store-links__link" target="_blank" rel="noopener">
                   <picture>
                     <img src="images/app-store.svg" alt="Download on the App Store">
                   </picture>
                 </a>
               </li>
               <li class="store-links__item">
-                <a href="#" class="store-links__link" target="_blank">
+                <a href="#" class="store-links__link" target="_blank" rel="noopener">
                   <picture>
                     <img src="images/google-play.svg" alt="Get in on Google Play">
                   </picture>
@@ -89,7 +91,7 @@
         </div>
         <div class="row__col--12 header__col header__col--copyright">
           <p class="header__copyright">
-            <a>Политика конфиденциальности</a>
+            <a href="static/privacy.txt" target="_blank" data-translate="footerPrivacy">Политика конфиденциальности</a>
           </p>
         </div>
       </div>

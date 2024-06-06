@@ -7,7 +7,7 @@
       top: 0;
       left: 0;
       transition: $transition;
-      transition-property: background;
+      transition-property: background, transform;
       z-index: 900;
       &.is-sticky {
         @media (min-width: $sm-mf) {

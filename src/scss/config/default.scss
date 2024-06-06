@@ -12,6 +12,57 @@ html {
   }
 }
 
+html:not(.is-loaded) {
+  header.header {
+    transform: translateY(-100vh);
+  }
+  .intro__title,
+  .intro__subtitle,
+  .intro__store-links,
+  .intro__media,
+  .intro__scroll-down {
+    visibility: hidden;
+    opacity: 0;
+  }
+  .intro__scroll-down {
+    transform: translateY(30rem);
+  }
+}
+
+header.header {
+  transition-delay: .65s;
+}
+
+.intro__title,
+.intro__subtitle,
+.intro__store-links,
+.intro__media,
+.intro__scroll-down {
+  transition: $transition;
+  transition-property: transform, visibility, opacity;
+}
+
+.intro__title {
+  transition-delay: .9s;
+}
+
+.intro__subtitle {
+  transition-delay: 1.05s;
+}
+
+.intro__store-links {
+  transition-delay: 1.3s;
+}
+
+.intro__media {
+  transition-duration: 1s;
+  transition-delay: 1.4s;
+}
+
+.intro__scroll-down {
+  transition-delay: 1.65s;
+}
+
 html,
 body {
   height: 100%;

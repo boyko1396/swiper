@@ -12,4 +12,22 @@
   <meta name="msapplication-config" content="static/favicon/browserconfig.xml">
   <meta name="theme-color" content="#7C40FF">
   <title>@@title</title>
+  <style>
+    .u-preloader {
+      background: #090215;
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      pointer-events: none;
+      transition: all .35s;
+      transition-property: opacity, visibility;
+      z-index: 10000;
+    }
+    html.is-loaded .u-preloader {
+      opacity: 0;
+      visibility: hidden;
+    }
+  </style>
 </head>

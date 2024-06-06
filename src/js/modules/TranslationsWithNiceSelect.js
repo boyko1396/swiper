@@ -1,10 +1,15 @@
+import NiceSelect from '../libs/nice-select2';
+
 export class Translations {
   constructor(defaultLang = 'ru', translationFile = 'static/translations.json') {
     this.defaultLang = defaultLang;
     this.translationFile = translationFile;
     this.contentElements = document.querySelectorAll('[data-translate]');
     this.altElements = document.querySelectorAll('[data-translate-alt]');
+    this.placeholderElements = document.querySelectorAll('[data-translate-placeholder]');
+    this.optionElements = document.querySelectorAll('[data-translate-option]');
     this.languageButtons = document.querySelectorAll('.language-select__link');
+    this.selectElement = document.getElementById('js-select-cta-question');
     this.init();
   }
 
@@ -16,6 +21,7 @@ export class Translations {
       .then(response => response.json())
       .then(translations => {
         this.updateContent(translations, lang);
+        this.initNiceSelect();
       });
 
     this.languageButtons.forEach(button => {
@@ -26,6 +32,7 @@ export class Translations {
           .then(response => response.json())
           .then(translations => {
             this.updateContent(translations, selectedLang);
+            this.refreshNiceSelect();
           });
       });
     });
@@ -46,6 +53,21 @@ export class Translations {
       }
     });
 
+    this.placeholderElements.forEach(element => {
+      const key = element.getAttribute('data-translate-placeholder');
+      if (translations[lang][key]) {
+        element.placeholder = translations[lang][key];
+      }
+    });
+
+    this.optionElements.forEach(element => {
+      const key = element.getAttribute('data-translate-option');
+      if (translations[lang][key]) {
+        element.textContent = translations[lang][key];
+        element.value = translations[lang][key];
+      }
+    });
+
     this.updateActiveButton(lang);
   }
 
@@ -53,5 +75,18 @@ export class Translations {
     this.languageButtons.forEach(button => {
       button.classList.toggle('is-active', button.getAttribute('data-lang') === lang);
     });
+  }
+
+  initNiceSelect() {
+    if (this.selectElement) {
+      this.niceSelectInstance = new NiceSelect(this.selectElement, { searchable: false });
+    }
+  }
+
+  refreshNiceSelect() {
+    if (this.niceSelectInstance) {
+      this.niceSelectInstance.destroy();
+      this.initNiceSelect();
+    }
   }
 }

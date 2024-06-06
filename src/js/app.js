@@ -8,40 +8,43 @@
  */
 
 // support webp, identify device
-import { Translations } from './modules/translations.js';
+import { Translations } from './modules/TranslationsWithNiceSelect.js';
+import initWOW from './modules/WOW.js';
 import BaseHelpers from './helpers/BaseHelpers.js';
 import StickyHeader from './modules/StickyHeader.js';
 import HeaderBtnToggle from './modules/HeaderBtnToggle.js';
 import { SmoothScroll } from './modules/SmoothScroll.js';
 import SliderInit from './modules/SwiperInit.js';
 import FaqCard from './modules/FaqCard.js';
-import NiceSelectInit from './modules/NiceSelectInit.js';
 
 BaseHelpers.checkWebpSupport();
 BaseHelpers.addTouchClass();
 BaseHelpers.addLoadedClass();
 
 document.addEventListener('DOMContentLoaded', function() {
-  // translate languge
+  // translate language and select
   const translations = new Translations();
+  // animated scroll
+  initWOW(190);
   // header sticky
   new StickyHeader('.js-header-sticky', 'is-sticky');
   // nav active anchor
   const smoothScroll = new SmoothScroll('.js-anchor', '--scroll-offset', 650);
   // header nav mobile toggle
-  const headerBtnToggle = new HeaderBtnToggle();
+  new HeaderBtnToggle();
   // slider init
   SliderInit();
   // faq card
-  const faqCard = new FaqCard();
+  new FaqCard();
   // select init
-  NiceSelectInit();
+  // NiceSelectInit();
 });
 
 // form
 document.addEventListener('DOMContentLoaded', function() {
   const form = document.getElementById('cta-form');
-  const thanksMessage = document.querySelector('.cta-block__thanks');
+  const thanksCtaBlock = document.querySelector('.js-cta-thanks');
+  const closeBtn = document.querySelector('.js-cta-thanks-close');
 
   form.addEventListener('submit', function(event) {
     event.preventDefault();
@@ -53,11 +56,23 @@ document.addEventListener('DOMContentLoaded', function() {
     xhr.onreadystatechange = function() {
       if (xhr.readyState === 4) {
         if (xhr.status === 200 && xhr.responseText === 'success') {
-          thanksMessage.classList.add('is-show');
-        } else {
+          thanksCtaBlock.classList.add('is-show');
+          setTimeout(function() {
+            thanksCtaBlock.classList.remove('is-show');
+          }, 7000);
         }
       }
     };
     xhr.send(formData);
+  });
+
+  closeBtn.addEventListener('click', function() {
+    thanksCtaBlock.classList.remove('is-show');
+  });
+
+  document.addEventListener('click', function(event) {
+    if (!event.target.closest('.cta-thanks__inner')) {
+      thanksCtaBlock.classList.remove('is-show');
+    }
   });
 });
